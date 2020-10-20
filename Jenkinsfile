@@ -9,6 +9,7 @@ pipeline {
             }
             steps {
                 withEnv(["HOME=${env.WORKSPACE}"]) {
+                    sh 'ls'
                     sh 'python -m pip install pytest --user'
                     sh 'python -m pytest' 
                 }
