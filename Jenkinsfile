@@ -8,7 +8,10 @@ pipeline {
                 }
             }
             steps {
-                sh 'python -m pip install --user pytest && pytest' 
+                withEnv(["HOME=${env.WORKSPACE}"]) {
+                    sh 'python -m pip install pytest --user'
+                    sh 'pytest' 
+                }
             }
         }
     }
