@@ -8,7 +8,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'python -m pip install pytest && pytest' 
+                sh 'python -m pip install --user pytest && pytest' 
             }
         }
     }
